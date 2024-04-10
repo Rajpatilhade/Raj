@@ -1,0 +1,31 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class RummyGame {
+    public static void main(String[] args) {
+        // कार्ड्स तयार करा
+        ArrayList<String> cards = new ArrayList<>();
+        for (int i = 1; i <= 13; i++) {
+            cards.add("स्पेड " + i);
+            cards.add("हार्ट " + i);
+            cards.add("डायमंड " + i);
+            cards.add("क्लब " + i);
+        }
+
+        // जोकर जोडा
+        cards.add("जोकर");
+        cards.add("जोकर");
+
+        // कार्ड्स शफल करा
+        Collections.shuffle(cards);
+
+        // कार्ड्स डिस्ट्रिब्यूट करा
+        ArrayList<String> player1 = new ArrayList<>();
+        ArrayList<String> player2 = new ArrayList<>();
+
+        for (int i = 0; i < 21; i++) {
+            player1.add(cards.remove(0));
+            player2.add(cards.remove(0));
+        }
+
+        // खेळी शुरू करा
